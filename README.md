@@ -1,4 +1,4 @@
-# DETESTS-Dis
+# DETESTS-Dis IberLEF 2024
 
 ## 1. Title
 DETESTS-Dis (DETEction and classification of racial STereotypes in Spanish - Learning with Disagreement) --- @ IberLEF 2024
