@@ -35,16 +35,16 @@ https://detests-dis.github.io/corpus/
 - f) level2 = previous tweet or comment, refers to “comment_id”
 - g) level3 = first tweet or comment, refers to “comment_id”
 - h) level4 = news text or racial hoax, refers to “id” column in “level4.csv” table.
-- j) stereotype_a1 = individual annotation
-- k) stereotype_a2
-- l) stereotype_a3
-- m) stereotype = majority voting (hard label)
-- n) stereotype_soft = softmax normalization (soft label)
-- o) implicit_a1
-- p) implicit_a2
-- q) implicit_a3
-- r) implicit
-- s) implicit_soft
+- i) stereotype_a1 = individual annotation
+- j) stereotype_a2
+- k) stereotype_a3
+- l) stereotype = majority voting (hard label)
+- m) stereotype_soft = softmax normalization (soft label)
+- n) implicit_a1
+- o) implicit_a2
+- p) implicit_a3
+- q) implicit
+- r) implicit_soft
 
 This set of features will only be available during training. The test dataset will only contain the
 following attributes: source, id, comment_id, text, level1, level2, level3, level4.
