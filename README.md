@@ -1,2 +1,67 @@
 # DETESTS-Dis
-DETEction and classification of racial STereotypes in Spanish - Learning with Disagreement @ IberLEF 2024
+
+## 1. Title
+DETESTS-Dis (DETEction and classification of racial STereotypes in Spanish - Learning with Disagreement) --- @ IberLEF 2024
+
+## 2. Organizers
+
+- Mariona Taulé -- mtaule[at]ub.edu
+- Simona Frenda -- simona.frenda[at]unito.it
+- Wolfgang Schmeisser-Nieto -- wolfgang.schmeisser[at]ub.edu
+- Pol Pastells -- pol.pastells[at]ub.edu
+- Alejandro Ariza-Casabona -- alejandro.ariza15[at]ub.edu
+- Mireia Farrús -- mfarrus[at]ub.edu
+- Paolo Rosso -- prosso[at]dsic.upv.es
+
+## 3. Corpus Description
+
+https://detests-dis.github.io/corpus/
+
+## 4. Number of training instances
+
+9906 (5629 from DETESTS corpus and 4277 from StereoHoax-ES)
+
+## 5. Number of columns
+
+18
+
+## 6. Attribute information
+
+- a) source = {“detests”, “stereohoax”}
+- b) id = unique identifier
+- c) comment_id = comment identifier
+- d) text = sentence or tweet
+- e) level1 = previous sentence, refers to “id” (only if source=”detests”)
+- f) level2 = previous tweet or comment, refers to “comment_id”
+- g) level3 = first tweet or comment, refers to “comment_id”
+- h) level4 = news text or racial hoax, refers to “id” column in “level4.csv” table.
+- j) stereotype_a1 = individual annotation
+- k) stereotype_a2
+- l) stereotype_a3
+- m) stereotype = majority voting (hard label)
+- n) stereotype_soft = softmax normalization (soft label)
+- o) implicit_a1
+- p) implicit_a2
+- q) implicit_a3
+- r) implicit
+- s) implicit_soft
+
+This set of features will only be available during training. The test dataset will only contain the
+following attributes: source, id, comment_id, text, level1, level2, level3, level4.
+
+There are no missing values in this dataset.
+
+## 7. File format
+both train and test files will be provided in CSV format, where each field is comma separated.
+
+## 8. Dataset requirements
+
+a) Please fill in the following registration form to receive the dataset password:
+https://forms.gle/CeBdPghgBDi21UaG8 
+  Once you are registered, we will provide you the password to unzip the files.
+
+b) By participating in this competition, you agree to the following Terms and Conditions:
+https://tuit.cat/nZ1eq
+
+c) The training and test sets will be available at this website, at the Corpus section
+(https://detests-dis.github.io/corpus/).
