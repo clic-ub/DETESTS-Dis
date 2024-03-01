@@ -1,6 +1,7 @@
 # DETESTS-Dis IberLEF 2024
 
 ## 1. Title
+
 DETESTS-Dis (DETEction and classification of racial STereotypes in Spanish - Learning with Disagreement) --- @ IberLEF 2024
 
 ## 2. Organizers
@@ -52,12 +53,12 @@ following attributes: source, id, comment_id, text, level1, level2, level3, leve
 There are no missing values in this dataset.
 
 ## 7. File format
-both train and test files will be provided in CSV format, where each field is comma separated.
+Both [train](https://github.com/clic-ub/DETESTS-Dis/blob/main/training_data.zip) and test files will be provided in CSV format, where each field is comma separated.
 
 ## 8. Dataset requirements
 
 a) Please fill in the following registration form to receive the dataset password:
-https://forms.gle/CeBdPghgBDi21UaG8 
+https://forms.gle/CeBdPghgBDi21UaG8
   Once you are registered, we will provide you the password to unzip the files.
 
 b) By participating in this competition, you agree to the following Terms and Conditions:
