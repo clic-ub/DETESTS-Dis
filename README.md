@@ -35,7 +35,7 @@ https://detests-dis.github.io/corpus/
 - e) level1 = previous sentence, refers to “id” (only if source=”detests”)
 - f) level2 = previous tweet or comment, refers to “comment_id”
 - g) level3 = first tweet or comment, refers to “comment_id”
-- h) level4 = news text or racial hoax, refers to “id” column in “level4.csv” table.
+- h) level4 = news text or racial hoax, refers to “id” column in [“level4.csv” table](https://github.com/clic-ub/DETESTS-Dis/blob/main/level4_table.zip)
 - i) stereotype_a1 = individual annotation
 - j) stereotype_a2
 - k) stereotype_a3
