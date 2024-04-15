@@ -1,0 +1,26 @@
+[
+	{
+		"test_case":"DETESTS-Dis",
+		"id":"I1",
+		"value": {
+			"Stereotype": 1.0,
+			"NoStereotype": 0.0
+		}
+	},
+	{
+		"test_case":"DETESTS-Dis",
+		"id":"I2",
+		"value": {
+			"Stereotype": 0.8,
+			"NoStereotype": 0.2
+		}
+	},
+	{
+		"test_case":"DETESTS-Dis",
+		"id":"I3",
+		"value": {
+			"Stereotype": 0.1,
+			"NoStereotype": 0.9
+		}
+	}
+]

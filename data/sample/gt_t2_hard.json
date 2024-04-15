@@ -1,0 +1,17 @@
+[
+    {
+        "test_case":"DETESTS-Dis",
+        "id":"I1",
+        "value":"Explicit"
+    },
+    {
+        "test_case":"DETESTS-Dis",
+        "id":"I2",
+        "value":"NoStereotype"
+    },
+    {
+        "test_case":"DETESTS-Dis",
+        "id":"I3",
+        "value":"NoStereotype"
+    }
+]

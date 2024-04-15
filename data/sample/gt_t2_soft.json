@@ -1,0 +1,29 @@
+[
+	{
+		"test_case":"DETESTS-Dis",
+		"id":"I1",
+		"value": {
+			"Implicit": 0.0,
+			"Explicit": 1.0,
+			"NoStereotype": 0.0
+		}
+	},
+	{
+		"test_case":"DETESTS-Dis",
+		"id":"I2",
+		"value": {
+			"Implicit": 0.0,
+			"Explicit": 0.1,
+			"NoStereotype": 0.9
+		}
+	},
+	{
+		"test_case":"DETESTS-Dis",
+		"id":"I3",
+		"value": {
+			"Implicit": 0.2,
+			"Explicit": 0.2,
+			"NoStereotype": 0.6
+		}
+	}
+]
