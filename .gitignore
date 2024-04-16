@@ -1,3 +1,9 @@
+data/train.csv
+data/train_val.csv
+data/validation.csv
+data/validation*.json
+data/test.csv
+data/test*.json
 data/test_solutions.csv
 
 # Byte-compiled / optimized / DLL files
@@ -79,6 +85,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+.virtual_documents/
 
 # IPython
 profile_default/

@@ -67,3 +67,13 @@ https://tuit.cat/nZ1eq
 
 c) The training and test sets will be available at this website, at the Corpus section
 (https://detests-dis.github.io/corpus/).
+
+## 9. Baselines
+
+You may reproduce the classical baselines (non-informative, random classifier, TFIDF + SVC, Fast Text + SVC) for tasks 1 and 2 with hard labels by running:
+
+- `py baselines.py` (for the test set)
+
+- `py baselines.py -train data/train_val.csv -test data/validation.csv -folder baselines/validation` (for the validation set)
+
+The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft labels can be re-created with `beto_baselines.ipynb`.
