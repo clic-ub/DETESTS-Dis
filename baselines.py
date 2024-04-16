@@ -1,4 +1,5 @@
 import argparse
+import os
 
 import numpy as np
 import pandas as pd
@@ -22,6 +23,12 @@ def parsing():
         type=str,
         default="data/test.csv",
         help="Test file",
+    )
+    parser.add_argument(
+        "-folder",
+        type=str,
+        default="baselines",
+        help="Folder for saving the predictions",
     )
     parser.add_argument(
         "-model",
@@ -114,25 +121,25 @@ def main(args):
     X_train2 = train2["text"].to_numpy()
 
     if model in ("zeros", "all"):
-        results["stereotype_pred"] = 0
-        results.to_csv("baselines/all_zeros_t1_hard.csv", index=False)
+        results["stereotype"] = 0
+        results.to_csv(os.path.join(args.folder, "all_zeros_t1_hard.csv"), index=False)
 
-        results2["stereotype_pred"] = 0
-        results2["implicit_pred"] = 0
-        results2.to_csv("baselines/all_zeros_t2_hard.csv", index=False)
+        results2["stereotype"] = 0
+        results2["implicit"] = 0
+        results2.to_csv(os.path.join(args.folder, "all_zeros_t2_hard.csv"), index=False)
 
     if model in ("ones", "all"):
-        results["stereotype_pred"] = 1
-        results.to_csv("baselines/all_ones_t1_hard.csv", index=False)
+        results["stereotype"] = 1
+        results.to_csv(os.path.join(args.folder, "all_ones_t1_hard.csv"), index=False)
 
-        results2["stereotype_pred"] = 1
-        results2["implicit_pred"] = 1
-        results2.to_csv("baselines/all_ones_t2_hard.csv", index=False)
+        results2["stereotype"] = 1
+        results2["implicit"] = 1
+        results2.to_csv(os.path.join(args.folder, "all_ones_t2_hard.csv"), index=False)
 
     if model in ("random", "all"):
         pred = random_classifier(X_train, y_train, X_test)
-        results["stereotype_pred"] = pred
-        results.to_csv("baselines/random_classifier_t1_hard.csv", index=False)
+        results["stereotype"] = pred
+        results.to_csv(os.path.join(args.folder, "random_classifier_t1_hard.csv"), index=False)
 
         # mask
         test_mask = pred > 0.5
@@ -140,18 +147,18 @@ def main(args):
         X_test2 = test2["text"].to_numpy()
 
         # implicit
-        results2["stereotype_pred"] = pred
-        results2["implicit_pred"] = 0
-        results2.loc[test_mask, "implicit_pred"] = random_classifier(
+        results2["stereotype"] = pred
+        results2["implicit"] = 0
+        results2.loc[test_mask, "implicit"] = random_classifier(
             X_train2, train2["implicit"].to_numpy(), X_test2
         )
-        results2.to_csv("baselines/random_classifier_t2_hard.csv", index=False)
+        results2.to_csv(os.path.join(args.folder, "random_classifier_t2_hard.csv"), index=False)
 
     if model in ("tfidf", "all"):
         # stereotype
         X_train_vec, X_test_vec = tfidf(X_train, X_test, ngrams=(1, 3))
         pred = svm(X_train_vec, y_train, X_test_vec)
-        results.to_csv("baselines/tfidf_svc_t1_hard.csv", index=False)
+        results.to_csv(os.path.join(args.folder, "tfidf_svc_t1_hard.csv"), index=False)
 
         # mask
         test_mask = pred > 0.5
@@ -160,18 +167,18 @@ def main(args):
         X_train_vec2, X_test_vec2 = tfidf(X_train2, X_test2, ngrams=(1, 3))
 
         # implicit
-        results2["stereotype_pred"] = pred
-        results2["implicit_pred"] = 0
-        results2.loc[test_mask, "implicit_pred"] = svm(
+        results2["stereotype"] = pred
+        results2["implicit"] = 0
+        results2.loc[test_mask, "implicit"] = svm(
             X_train_vec2, train2["implicit"].to_numpy(), X_test_vec2
         )
-        results2.to_csv("baselines/tfidf_svc_t2_hard.csv", index=False)
+        results2.to_csv(os.path.join(args.folder, "tfidf_svc_t2_hard.csv"), index=False)
 
     if model in ("fast", "all"):
         # stereotype
         X_train_vec, X_test_vec = fast_text(X_trn, X_tst)
         pred = svm(X_train_vec, y_train, X_test_vec)
-        results.to_csv("baselines/fast_text_svc_t1_hard.csv", index=False)
+        results.to_csv(os.path.join(args.folder, "fast_text_svc_t1_hard.csv"), index=False)
 
         # mask
         test_mask = pred > 0.5
@@ -180,12 +187,12 @@ def main(args):
         X_train_vec2, X_test_vec2 = fast_text(X_train2, X_test2)
 
         # implicit
-        results2["stereotype_pred"] = pred
-        results2["implicit_pred"] = 0
-        results2.loc[test_mask, "implicit_pred"] = svm(
+        results2["stereotype"] = pred
+        results2["implicit"] = 0
+        results2.loc[test_mask, "implicit"] = svm(
             X_train_vec2, train2["implicit"].to_numpy(), X_test_vec2
         )
-        results2.to_csv("baselines/fast_text_svc_t2_hard.csv", index=False)
+        results2.to_csv(os.path.join(args.folder, "fast_text_svc_t2_hard.csv"), index=False)
 
 
 if __name__ == "__main__":
