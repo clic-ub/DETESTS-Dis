@@ -48,7 +48,31 @@ def evaluate(pred, gold, evaluate_as_hard=False):
         report = test.evaluate_lst(pred, gold, metrics, **params)
     else:
         report = test.evaluate(pred, gold, metrics, **params)
-    report.print_report()
+
+    if task == 1 and label_type == "hard":
+        return {
+            "F1": report.report["metrics"]["FMeasure"]["results"]["test_cases"][0]["classes"][
+                "Stereotype"
+            ]
+        }
+    elif task == 2 and label_type == "hard":
+        return {
+            "ICM": report.report["metrics"]["ICM"]["results"]["test_cases"][0]["average"],
+            "ICM Norm": report.report["metrics"]["ICMNorm"]["results"]["test_cases"][0]["average"],
+        }
+    elif task == 1 and label_type == "soft":
+        return {
+            "Cross Entropy": report.report["metrics"]["CrossEntropy"]["results"]["test_cases"][0][
+                "average"
+            ]
+        }
+    else:
+        return {
+            "ICM Soft": report.report["metrics"]["ICMSoft"]["results"]["test_cases"][0]["average"],
+            "ICM Soft Norm": report.report["metrics"]["ICMSoftNorm"]["results"]["test_cases"][0][
+                "average"
+            ],
+        }
 
 
 def test_example(name, team_name="example_pred"):
@@ -72,9 +96,19 @@ def soft_to_hard(fname):
     df.to_json("_".join(fname[:-5].split("_")[:-1]) + "_hard.json", orient="records", indent=4)
 
 
-if __name__ == "__main__":
-    # pred, gold = test_example('t1_soft')
+def main():
     pred, gold = test_example("t1_hard")
-    # pred, gold = test_example('t2_soft')
-    # pred, gold = test_example('t2_hard')
-    evaluate(pred, gold)
+    print("Task 1 Hard Labels", evaluate(pred, gold))
+
+    pred, gold = test_example("t1_soft")
+    print("Task 1 Soft Labels", evaluate(pred, gold))
+
+    pred, gold = test_example("t2_soft")
+    print("Task 2 Hard Labels", evaluate(pred, gold))
+
+    pred, gold = test_example("t2_hard")
+    print("Task 2 Soft Labels", evaluate(pred, gold))
+
+
+if __name__ == "__main__":
+    main()
