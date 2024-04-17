@@ -69,11 +69,13 @@ c) The training and test sets are available in this repository, in the [data](ht
 
 ## 9. Baselines
 
+The `baselines` folder contains baselines for the test set and validation set (created in the `Examples` notebook).
+
 You may reproduce the classical baselines (non-informative, random classifier, TFIDF + SVC, Fast Text + SVC) for tasks 1 and 2 with hard labels by running:
 
-- `py baselines.py` (for the test set)
+- `py baselines.py -folder baselines/test` (for the test set)
 
-- `py baselines.py -train data/train_val.csv -test data/validation.csv -folder baselines/validation` (for the validation set, after creating it with the `Examples` notebook)
+- `py baselines.py -train data/train_val.csv -test data/validation.csv -folder baselines/validation` (for the validation set)
 
 The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft labels can be re-created with `beto_baselines.ipynb`.
 
