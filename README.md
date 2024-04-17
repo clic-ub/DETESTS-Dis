@@ -80,4 +80,4 @@ The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft
 ## 10. Submission format
 
 An example of the submission format is shown in `data/sample` for both tasks with hard and soft labels. 
-`Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as en example of the officail evaluation metrics.
+`Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as en example of the official evaluation metrics.
