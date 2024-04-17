@@ -75,7 +75,7 @@ An example of the submission format is shown in [data/sample](https://github.com
 ## 10. Baselines
 
 The `baselines` folder contains baselines for the test set and validation set (created in the `Examples` notebook).
-The baselines are created in `csv` folder and transformed into `json` in `Examples.ipynb`.
+The baselines are created in `csv` format and transformed into `json` in `Examples.ipynb`.
 
 You may reproduce the classical baselines (non-informative, random classifier, TFIDF + SVC, Fast Text + SVC) for tasks 1 and 2 with hard labels by running:
 
