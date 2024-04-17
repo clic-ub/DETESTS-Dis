@@ -67,9 +67,15 @@ https://tuit.cat/nZ1eq
 
 c) The training and test sets are available in this repository, in the [data](https://github.com/clic-ub/DETESTS-Dis/blob/main/data) folder. The password is provided after filling the form in a).
 
-## 9. Baselines
+## 9. Submission format
+
+An example of the submission format is shown in [data/sample](https://github.com/clic-ub/DETESTS-Dis/tree/main/data/sample) for both tasks with hard and soft labels.
+`Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as an example of the official evaluation metrics.
+
+## 10. Baselines
 
 The `baselines` folder contains baselines for the test set and validation set (created in the `Examples` notebook).
+The baselines are created in `csv` folder and transformed into `json` in `Examples.ipynb`.
 
 You may reproduce the classical baselines (non-informative, random classifier, TFIDF + SVC, Fast Text + SVC) for tasks 1 and 2 with hard labels by running:
 
@@ -79,10 +85,6 @@ You may reproduce the classical baselines (non-informative, random classifier, T
 
 The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft labels can be re-created with `beto_baselines.ipynb`.
 
-## 10. Submission format
-
-An example of the submission format is shown in [data/sample](https://github.com/clic-ub/DETESTS-Dis/tree/main/data/sample) for both tasks with hard and soft labels.
-`Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as an example of the official evaluation metrics.
 
 
 ## References
