@@ -76,3 +76,8 @@ You may reproduce the classical baselines (non-informative, random classifier, T
 - `py baselines.py -train data/train_val.csv -test data/validation.csv -folder baselines/validation` (for the validation set, after creating it with the `Examples` notebook)
 
 The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft labels can be re-created with `beto_baselines.ipynb`.
+
+## 10. Submission format
+
+An example of the submission format is shown in `data/sample` for both tasks with hard and soft labels. 
+`Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as en example of the officail evaluation metrics.
