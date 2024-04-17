@@ -73,6 +73,6 @@ You may reproduce the classical baselines (non-informative, random classifier, T
 
 - `py baselines.py` (for the test set)
 
-- `py baselines.py -train data/train_val.csv -test data/validation.csv -folder baselines/validation` (for the validation set, after creating it with the `Examples` noteboo)
+- `py baselines.py -train data/train_val.csv -test data/validation.csv -folder baselines/validation` (for the validation set, after creating it with the `Examples` notebook)
 
 The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft labels can be re-created with `beto_baselines.ipynb`.
