@@ -77,13 +77,13 @@ def evaluate(pred, gold, evaluate_as_hard=False):
 
 def test_example(name, team_name="example_pred"):
     if name == "t1_soft":
-        return f"data/sample/{team_name}_t1_soft.json", "data/sample/gt_t1_soft.json"
+        return f"data/sample/{team_name}_t1_soft.json", "data/sample/example_gold_t1_soft.json"
     if name == "t1_hard":
-        return f"data/sample/{team_name}_t1_hard.json", "data/sample/gt_t1_hard.json"
+        return f"data/sample/{team_name}_t1_hard.json", "data/sample/example_gold_t1_hard.json"
     if name == "t2_soft":
-        return f"data/sample/{team_name}_t2_soft.json", "data/sample/gt_t2_soft.json"
+        return f"data/sample/{team_name}_t2_soft.json", "data/sample/example_gold_t2_soft.json"
     if name == "t2_hard":
-        return f"data/sample/{team_name}_t2_hard.json", "data/sample/gt_t2_hard.json"
+        return f"data/sample/{team_name}_t2_hard.json", "data/sample/example_gold_t2_hard.json"
 
 
 def soft_to_hard(fname):
