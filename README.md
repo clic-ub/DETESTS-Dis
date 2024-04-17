@@ -82,4 +82,9 @@ The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft
 ## 10. Submission format
 
 An example of the submission format is shown in [data/sample](https://github.com/clic-ub/DETESTS-Dis/tree/main/data/sample) for both tasks with hard and soft labels.
-`Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as en example of the official evaluation metrics.
+`Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as an example of the official evaluation metrics.
+
+
+## References
+
+Cañete, J., Chaperon, G., Fuentes, R., Ho, J. H., Kang, H., & Pérez, J. (2020). Spanish pre-trained bert model and evaluation data. In PML4DC at ICLR 2020.
