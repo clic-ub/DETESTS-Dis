@@ -35,7 +35,7 @@ https://detests-dis.github.io/corpus/
 - e) level1 = previous sentence, refers to “id” (only if source=”detests”)
 - f) level2 = previous tweet or comment, refers to “comment_id”
 - g) level3 = first tweet or comment, refers to “comment_id”
-- h) level4 = news text or racial hoax, refers to “id” column in [“level4.csv” table](https://github.com/clic-ub/DETESTS-Dis/blob/main/level4_table.zip)
+- h) level4 = news text or racial hoax, refers to “id” column in [“level4.csv” table](https://github.com/clic-ub/DETESTS-Dis/blob/main/data/level4_table.zip)
 - i) stereotype_a1 = individual annotation
 - j) stereotype_a2
 - k) stereotype_a3
@@ -54,7 +54,7 @@ There are no missing values in this dataset.
 
 ## 7. File format
 
-Both [train](https://github.com/clic-ub/DETESTS-Dis/blob/main/training_data.zip) and test files will be provided in CSV format, where each field is comma separated.
+Both [train](https://github.com/clic-ub/DETESTS-Dis/blob/main/data/training_data.zip) and [test](https://github.com/clic-ub/DETESTS-Dis/blob/main/data/test.zip) files will be provided in CSV format, where each field is comma separated.
 
 ## 8. Dataset requirements
 
@@ -65,7 +65,7 @@ https://forms.gle/CeBdPghgBDi21UaG8
 b) By participating in this competition, you agree to the following Terms and Conditions:
 https://tuit.cat/nZ1eq
 
-c) The training and test sets are available in this repository, in the `data` folder. The password is provided after filling the form in a).
+c) The training and test sets are available in this repository, in the [data](https://github.com/clic-ub/DETESTS-Dis/blob/main/data) folder. The password is provided after filling the form in a).
 
 ## 9. Baselines
 
@@ -79,5 +79,5 @@ The baselines using BETO (Cañete et al. 2020) for both tasks with hard and soft
 
 ## 10. Submission format
 
-An example of the submission format is shown in `data/sample` for both tasks with hard and soft labels. 
+An example of the submission format is shown in [data/sample](https://github.com/clic-ub/DETESTS-Dis/tree/main/data/sample) for both tasks with hard and soft labels.
 `Examples.ipynb` shows how to transform the predictions to the appropiate format, as well as en example of the official evaluation metrics.
