@@ -27,7 +27,7 @@ def evaluate(pred, gold, evaluate_as_hard=False):
         if label_type == "soft":
             metrics = ["ICMSoft", "ICMSoftNorm"]
         elif label_type == "hard":
-            metrics = ["ICM", "ICMNorm"]
+            metrics = ["ICM", "ICMNorm", "Precision", "Recall"]
         else:
             raise ValueError(f'Invalid label_type ({label_type}): Must be either "soft" or "hard".')
     elif task == 1:
@@ -53,12 +53,30 @@ def evaluate(pred, gold, evaluate_as_hard=False):
         return {
             "F1": report.report["metrics"]["FMeasure"]["results"]["test_cases"][0]["classes"][
                 "Stereotype"
-            ]
+            ],
+            "Precision": report.report["metrics"]["Precision"]["results"]["test_cases"][0][
+                "classes"
+            ]["Stereotype"],
+            "Recall": report.report["metrics"]["Recall"]["results"]["test_cases"][0]["classes"][
+                "Stereotype"
+            ],
         }
     elif task == 2 and label_type == "hard":
         return {
             "ICM": report.report["metrics"]["ICM"]["results"]["test_cases"][0]["average"],
             "ICM Norm": report.report["metrics"]["ICMNorm"]["results"]["test_cases"][0]["average"],
+            "PrecisionImplicit": report.report["metrics"]["Precision"]["results"]["test_cases"][0][
+                "classes"
+            ]["Implicit"],
+            "PrecisionExplicit": report.report["metrics"]["Precision"]["results"]["test_cases"][0][
+                "classes"
+            ]["Explicit"],
+            "RecallImplicit": report.report["metrics"]["Recall"]["results"]["test_cases"][0][
+                "classes"
+            ]["Implicit"],
+            "RecallExplicit": report.report["metrics"]["Recall"]["results"]["test_cases"][0][
+                "classes"
+            ]["Explicit"],
         }
     elif task == 1 and label_type == "soft":
         return {
