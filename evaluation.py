@@ -1,4 +1,5 @@
 import os
+import re
 
 import pandas as pd
 from pyevall.evaluation import PyEvALLEvaluation
@@ -106,12 +107,16 @@ def test_example(name, team_name="example_pred"):
 
 def soft_to_hard(fname):
     def transform(d):
+        ds = pd.Series(d)
+        if "Implicit" in ds and (ds.Implicit + ds.Explicit > ds.NoStereotype):
+            return ds[["Implicit", "Explicit"]].idxmax()
+
         return pd.Series(d).idxmax()
 
     print(f"Transforming Soft into Hard Labels for file {fname}")
     df = pd.read_json(fname)
     df["value"] = df["value"].apply(transform)
-    df.to_json("_".join(fname[:-5].split("_")[:-1]) + "_hard.json", orient="records", indent=4)
+    df.to_json(re.sub("soft", "soft2hard", fname), orient="records", indent=4)
 
 
 def main():
